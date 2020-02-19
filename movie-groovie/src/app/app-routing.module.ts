@@ -4,8 +4,9 @@ import { LoginModule, LoginComponent } from './pages/login';
 
 
 const routes: Routes = [
+  {path: '', redirectTo: '/login' ,pathMatch:'full'},
   {path: 'login', component: LoginComponent},
-  {path: '', loadChildren: () => import('./pages/main/main.module').then(m => m.MainModule)}
+  {path: 'main', loadChildren: () => import('./pages/main/main.module').then(m => m.MainModule)}
 ];
 
 @NgModule({
